@@ -1,0 +1,12 @@
+{
+  "name": "vijay-ghatage-portfolio",
+  "version": "1.0.0",
+  "description": "Vijay Ghatage - 3D Artist & Environment Designer Portfolio",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

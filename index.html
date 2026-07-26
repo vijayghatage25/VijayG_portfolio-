@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIJAY GHATAGE Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+<header>
+    <div class="logo">
+        <img src="images/logo.png" class="big-logo">
+    </div>
+
+    <nav>
+        <a href="#">HOME</a>
+        <a href="#work">WORK</a>
+        <a href="#" id="aboutBtn">ABOUT</a>
+        <a href="#" id="skillsBtn">SKILLS</a>
+        <a href="#" id="contactBtn">CONTACT</a>
+    </nav>
+
+    <button class="talk-btn">
+        LET'S TALK →
+    </button>
+</header>
+
+
+<!-- =========================
+     SOCIAL BAR
+========================= -->
+<div class="social-bar">
+    <div class="dot"></div>
+
+    <div class="social-item">
+        <img src="images/ArtStation.png" class="social-icon">
+        <div class="social-popup">
+            <a href="https://vijay472.artstation.com/" target="_blank">
+               ArtStation
+            </a>
+        </div>
+    </div>
+
+    <div class="social-item">
+        <img src="images/LinkedIn.png" class="social-icon">
+        <div class="social-popup">
+            <a href="https://www.linkedin.com/in/vijay-ghatage-3b69b3202/" target="_blank">
+               LinkedIn
+            </a>
+        </div>
+    </div>
+
+    <div class="social-item">
+        <img src="images/Mail.png" class="social-icon">
+        <div class="social-popup">
+            <a href="mailto:ghatagevijay25@gmail.com">
+               ghatagevijay25@gmail.com
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<!-- =========================
+     HERO SECTION
+========================= -->
+<section class="hero">
+    <div class="hero-box">
+
+        <span class="hello-text">
+            HELLO, I'M
+        </span>
+
+        <h1>
+            <span class="white-text">
+                VIJAY
+            </span>
+            <br>
+            <span class="gold-text">
+                GHATAGE
+            </span>
+        </h1>
+
+        <h2>
+            3D ARTIST & ENVIRONMENT DESIGNER
+        </h2>
+
+        <p>
+            I create real-time 3D environments and assets
+            for games, cinematic and interactive experiences.
+        </p>
+
+        <div class="software-box">
+            <img src="images/Maya.png">
+            <img src="images/Zbrush.png">
+            <img src="images/Substance.png">
+            <img src="images/Unreal.png">
+            <img src="images/Marmoset.png">
+            <img src="images/Photoshope.png">
+            <img src="images/Xnormal.png">
+        </div>
+
+        <div class="hero-buttons">
+            <a href="#work" class="work-btn">
+                VIEW MY WORK →
+            </a>
+
+            <a href="resume.pdf" class="resume-btn" id="resumeDownload">
+                DOWNLOAD RESUME ↓
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================
+     FEATURED WORK
+========================= -->
+<section id="work" class="featured-work">
+    <div class="featured-title">
+        <h2>
+            FEATURED WORK
+        </h2>
+    </div>
+
+    <div class="featured-grid">
+
+        <a href="props.html" class="featured-card">
+            <img src="images/props.jpg">
+            <div class="featured-overlay">
+                <h3>PROPS</h3>
+                <p>Weapons, crates and hard-surface assets.</p>
+            </div>
+        </a>
+
+        <a href="environment.html" class="featured-card">
+            <img src="images/env.jpg">
+            <div class="featured-overlay">
+                <h3>ENVIRONMENT</h3>
+                <p>Unreal Engine environments and cinematic scenes.</p>
+            </div>
+        </a>
+
+        <a href="scripts.html" class="featured-card">
+            <img src="images/scripts.jpg">
+            <div class="featured-overlay">
+                <h3>SCRIPTS</h3>
+                <p>Maya tools and automation utilities.</p>
+            </div>
+        </a>
+
+        <a href="credits.html" class="featured-card">
+            <img src="images/credits.jpg">
+            <div class="featured-overlay">
+                <h3>CREDITS</h3>
+                <p>Collaborations and production credits.</p>
+            </div>
+        </a>
+
+    </div>
+</section>
+
+
+<!-- SCI-FI DOWNLOAD POPUP -->
+<div class="download-popup" id="downloadPopup">
+    <div class="popup-box">
+        <div class="scan-line"></div>
+        <h2>DOWNLOADING...</h2>
+        <div class="loading-bar">
+            <div class="loading-fill" id="loadingFill"></div>
+            <div class="hud-right"></div>
+        </div>
+        <p id="loadingText">PREPARING FILE...</p>
+        <div class="hud-corners"></div>
+    </div>
+</div>
+
+
+<!-- =========================
+     ABOUT POPUP
+========================= -->
+<div class="about-popup" id="aboutPopup">
+    <div class="about-popup-box">
+
+        <div class="about-scan-line"></div>
+
+        <span class="about-close-btn" id="aboutCloseBtn">&times;</span>
+
+        <div class="about-header">
+            <span class="about-tag">// PLAYER PROFILE</span>
+            <h2>
+                <span class="white-text-small">VIJAY</span>
+                <span class="gold-text-small">GHATAGE</span>
+            </h2>
+            <p class="about-role">3D ARTIST & ENVIRONMENT DESIGNER</p>
+        </div>
+
+        <div class="about-content">
+
+            <div class="about-section">
+                <h3><span class="section-index">01</span> ABOUT ME</h3>
+                <p>
+                    I'm Vijay Ghatage, a 3D Artist and Environment Designer
+                    focused on building real-time worlds for games and
+                    cinematic experiences. I enjoy turning concepts into
+                    believable, detailed environments using industry-standard
+                    tools and game engine pipelines.
+                </p>
+            </div>
+
+            <div class="about-section">
+                <h3><span class="section-index">02</span> WHAT I DO</h3>
+                <ul class="about-list">
+                    <li>Real-time environment art for Unreal Engine</li>
+                    <li>Hard-surface & prop modeling</li>
+                    <li>Texturing and material creation (Substance)</li>
+                    <li>Lighting and scene composition</li>
+                    <li>Pipeline tools & Maya scripting</li>
+                </ul>
+            </div>
+
+            <div class="about-section">
+                <h3><span class="section-index">03</span> EXPERIENCE</h3>
+                <p>
+                    Experienced in building game-ready environments and
+                    props, with hands-on work across prop modeling,
+                    environment design and asset optimization for
+                    real-time engines.
+                </p>
+            </div>
+
+            <div class="about-section">
+                <h3><span class="section-index">04</span> SOFTWARE</h3>
+                <div class="about-software">
+                    <img src="images/Maya.png" title="Maya">
+                    <img src="images/Zbrush.png" title="ZBrush">
+                    <img src="images/Substance.png" title="Substance">
+                    <img src="images/Unreal.png" title="Unreal Engine">
+                    <img src="images/Marmoset.png" title="Marmoset Toolbag">
+                    <img src="images/Photoshope.png" title="Photoshop">
+                    <img src="images/Xnormal.png" title="xNormal">
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h3><span class="section-index">05</span> ABOUT THIS PORTFOLIO</h3>
+                <p>
+                    This portfolio showcases props, environments, scripts
+                    and production credits — built to feel like a AAA game
+                    studio showcase, with smooth galleries and real-time
+                    project browsing.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- =========================
+     SKILLS POPUP
+========================= -->
+<div class="skills-popup" id="skillsPopup">
+    <div class="skills-popup-box">
+
+        <div class="skills-scan-line"></div>
+
+        <span class="skills-close-btn" id="skillsCloseBtn">&times;</span>
+
+        <div class="skills-header">
+            <span class="skills-tag">// SKILL TREE</span>
+            <h2>MY <span class="gold-text-small">SKILLS</span></h2>
+            <p class="skills-subtitle">Core abilities used in game & environment art production.</p>
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill-tag">
+                <span class="skill-index">01</span>
+                <span>Modeling</span>
+            </div>
+
+            <div class="skill-tag">
+                <span class="skill-index">02</span>
+                <span>Texturing</span>
+            </div>
+
+            <div class="skill-tag">
+                <span class="skill-index">03</span>
+                <span>Baking</span>
+            </div>
+
+            <div class="skill-tag">
+                <span class="skill-index">04</span>
+                <span>Lighting</span>
+            </div>
+
+            <div class="skill-tag">
+                <span class="skill-index">05</span>
+                <span>Scene Creation</span>
+            </div>
+
+            <div class="skill-tag">
+                <span class="skill-index">06</span>
+                <span>Problem Solving</span>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- =========================
+     CONTACT POPUP
+========================= -->
+<div class="contact-popup" id="contactPopup">
+    <div class="contact-popup-box">
+
+        <div class="contact-scan-line"></div>
+
+        <span class="contact-close-btn" id="contactCloseBtn">&times;</span>
+
+        <div class="contact-header">
+            <span class="contact-tag">// GET IN TOUCH</span>
+            <h2>LET'S <span class="gold-text-small">CONNECT</span></h2>
+            <p class="contact-subtitle">Open to freelance work, collaborations and full-time roles.</p>
+        </div>
+
+        <div class="contact-content">
+
+            <a href="mailto:ghatagevijay25@gmail.com" class="contact-item">
+                <img src="images/Mail.png" class="contact-icon">
+                <div class="contact-text">
+                    <span class="contact-label">EMAIL</span>
+                    <span class="contact-value">ghatagevijay25@gmail.com</span>
+                </div>
+            </a>
+
+            <a href="tel:+919767111693" class="contact-item">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.62 10.79C8.06 13.62 10.38 15.93 13.21 17.38L15.41 15.18C15.69 14.9 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z"
+                          stroke="#d7b16a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="contact-text">
+                    <span class="contact-label">PHONE</span>
+                    <span class="contact-value">+91 9767111693</span>
+                </div>
+            </a>
+
+            <a href="https://vijay472.artstation.com/" target="_blank" class="contact-item">
+                <img src="images/ArtStation.png" class="contact-icon">
+                <div class="contact-text">
+                    <span class="contact-label">ARTSTATION</span>
+                    <span class="contact-value">vijay472.artstation.com</span>
+                </div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/vijay-ghatage-3b69b3202/" target="_blank" class="contact-item">
+                <img src="images/LinkedIn.png" class="contact-icon">
+                <div class="contact-text">
+                    <span class="contact-label">LINKEDIN</span>
+                    <span class="contact-value">Vijay Ghatage</span>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
