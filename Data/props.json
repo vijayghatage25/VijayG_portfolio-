@@ -1,0 +1,31 @@
+[
+  {
+    "title":"AKM",
+    "image":"projects/Props/AKM/thumb.jpg"
+  },
+
+  {
+    "title":"Knife",
+    "image":"projects/Props/Knife/thumb.jpg"
+  },
+
+  {
+    "title":"Old Telephone",
+    "image":"projects/Props/Old_Telephone/thumb.jpg"
+  },
+
+  {
+    "title":"Sticky Bomb",
+    "image":"projects/Props/StickyBomb/thumb.jpg"
+  },
+
+  {
+    "title":"MedKit Bag",
+    "image":"projects/Props/MedKit Bag/thumb.jpg"
+  },
+
+  {
+    "title":"Wooden Mug",
+    "image":"projects/Props/Wooden Mug/thumb.jpg"
+  }
+]

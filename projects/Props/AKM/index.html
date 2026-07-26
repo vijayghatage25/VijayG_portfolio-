@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AKM Gallery</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#050505;
+    color:white;
+    font-family:Arial;
+    padding:40px;
+}
+
+h1{
+    font-size:70px;
+    margin-bottom:50px;
+    letter-spacing:5px;
+}
+
+.gallery{
+    display:flex;
+    flex-direction:column;
+    gap:40px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:20px;
+    cursor:pointer;
+    border:1px solid rgba(255,255,255,0.08);
+    transition:0.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.01);
+    border-color:#d7b16a;
+}
+
+
+/* VIEWER */
+
+.viewer{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:rgba(0,0,0,0.97);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+    overflow:hidden;
+}
+
+.viewer img{
+
+    max-width:90%;
+    max-height:90vh;
+
+    transition:0.2s;
+
+    border-radius:20px;
+
+    cursor:grab;
+}
+
+
+/* CLOSE */
+
+.close{
+    position:absolute;
+    top:20px;
+    right:40px;
+    font-size:60px;
+    cursor:pointer;
+}
+
+
+/* ARROWS */
+
+.arrow{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    font-size:80px;
+
+    cursor:pointer;
+
+    user-select:none;
+
+    padding:20px;
+
+    color:white;
+}
+
+.left{
+    left:20px;
+}
+
+.right{
+    right:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>AKM</h1>
+
+<div class="gallery" id="gallery"></div>
+
+
+<div class="viewer" id="viewer">
+
+    <span class="close" id="closeViewer">×</span>
+
+    <span class="arrow left" id="prevBtn">‹</span>
+
+    <img id="viewerImg">
+
+    <span class="arrow right" id="nextBtn">›</span>
+
+</div>
+
+
+<script>
+
+let currentIndex = 0;
+
+let imageList = [];
+
+let zoom = 1;
+
+
+fetch('/api/gallery/AKM')
+
+.then(res => res.json())
+
+.then(images => {
+
+    imageList = images;
+
+    const gallery = document.getElementById('gallery');
+
+
+    images.forEach((image, index) => {
+
+        gallery.innerHTML += `
+
+            <img src="${image}" data-index="${index}">
+        `;
+    });
+
+
+    const allImages = document.querySelectorAll('.gallery img');
+
+    const viewer = document.getElementById('viewer');
+
+    const viewerImg = document.getElementById('viewerImg');
+
+    const closeViewer = document.getElementById('closeViewer');
+
+    const prevBtn = document.getElementById('prevBtn');
+
+    const nextBtn = document.getElementById('nextBtn');
+
+
+    function openImage(index){
+
+        currentIndex = index;
+
+        viewer.style.display = "flex";
+
+        viewerImg.src = imageList[index];
+
+        zoom = 1;
+
+        viewerImg.style.transform = `scale(${zoom})`;
+    }
+
+
+    allImages.forEach(img => {
+
+        img.addEventListener('click', () => {
+
+            openImage(Number(img.dataset.index));
+        });
+    });
+
+
+    nextBtn.addEventListener('click', () => {
+
+        currentIndex++;
+
+        if(currentIndex >= imageList.length){
+
+            currentIndex = 0;
+        }
+
+        openImage(currentIndex);
+    });
+
+
+    prevBtn.addEventListener('click', () => {
+
+        currentIndex--;
+
+        if(currentIndex < 0){
+
+            currentIndex = imageList.length - 1;
+        }
+
+        openImage(currentIndex);
+    });
+
+
+    closeViewer.addEventListener('click', () => {
+
+        viewer.style.display = "none";
+    });
+
+
+    document.addEventListener('keydown', (e) => {
+
+        if(viewer.style.display === "flex"){
+
+            if(e.key === "ArrowRight"){
+
+                nextBtn.click();
+            }
+
+            if(e.key === "ArrowLeft"){
+
+                prevBtn.click();
+            }
+
+            if(e.key === "Escape"){
+
+                viewer.style.display = "none";
+            }
+        }
+    });
+
+
+    viewerImg.addEventListener('wheel', (e) => {
+
+        e.preventDefault();
+
+        if(e.deltaY < 0){
+
+            zoom += 0.1;
+        }
+        else{
+
+            zoom -= 0.1;
+        }
+
+        if(zoom < 1){
+
+            zoom = 1;
+        }
+
+        viewerImg.style.transform = `scale(${zoom})`;
+    });
+
+});
+
+</script>
+
+</body>
+
+</html>
